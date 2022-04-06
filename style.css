@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: rgb(25, 165, 230);
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  height: 100vh;
+
+  color: #fff;
+
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.card {
+  width: 320px;
+  height: 450px;
+
+  background-color: #e219e2;
+
+  text-align: center;
+
+  box-shadow: 0 4px 8px 0 rgba(52, 30, 248, 0.2),
+    0 6px 20px 0 rgba(51, 37, 241, 0.19);
+
+  overflow: hidden;
+
+  position: relative;
+}
+.container .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgb(34, 34, 255);
+
+  clip-path: circle(150px at 80% 20%);
+
+  transition: 0.5s ease-in-out;
+}
+.container .card:hover:before {
+  clip-path: circle(300px at 80% -20%);
+}
+.container .card::after {
+  content: "Awesome";
+  position: absolute;
+  top: 40%;
+  left: -3%;
+
+  font-size: 5em;
+  font-weight: 800;
+
+  font-style: italic;
+
+  color: rgb(255, 255, 255, 0.2);
+}
+.container .card .img-bx {
+  position: absolute;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  z-index: 1;
+
+  width: 100%;
+  height: 220px;
+
+  transition: 1s;
+}
+.container .card:hover .img-bx {
+  top: 0;
+
+  transform: translateY(0);
+  transition: 1s;
+}
+.container .card .img-bx img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+.container .card .content-bx {
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+  height: 100px;
+
+  transition: 1s;
+
+  z-index: 10;
+}
+.container .card:hover .content-bx {
+  transform: translateY(-70%);
+
+  height: 120px;
+}
+.container .card .content-bx h2 {
+  position: relative;
+
+  line-height: 80px;
+
+  font-size: 30px;
+}
+.size,
+.color {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 5px;
+}
+.size span,
+.color span {
+  display: inline-block;
+
+  background: #999;
+
+  height: 20px;
+  width: 20px;
+
+  margin: 4px;
+}
+.size span:hover {
+  background: blue;
+  color: white;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+.size h3,
+.color h3 {
+  margin: 0 20px 3px 0;
+}
+.color span {
+  border-radius: 20px;
+}
+.size span {
+  border-radius: 4px;
+  color: black;
+}
+.container .card .color span:nth-child(2) {
+  background: red;
+}
+.container .card .color span:nth-child(3) {
+  background: #03a9f4;
+}
+.container .card .color span:nth-child(4) {
+  background: yellow;
+}
+.content-bx a {
+  display: inline-block;
+
+  text-decoration: none;
+
+  background: #999;
+  border: 1px solid blue;
+  color: black;
+
+  padding: 4px;
+  margin-top: 7px;
+}
+.content-bx a:hover {
+  background: blue;
+  color: #fff;
+
+  box-shadow: 2px 2px black;
+}
+.sign {
+  position: absolute;
+  top: 100px;
+  left: 50px;
+
+  font-family: cursive;
+}
